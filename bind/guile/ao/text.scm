@@ -33,11 +33,9 @@
            (rectangle '(0.2 0.3) '(0.6 0.4))))
 
 (make-glyph! "B" 0.575
-    (union (intersection (union (difference (circle '(0.3 0.725) 0.275)
-                                            (circle '(0.3 0.725) 0.175))
-                                      (difference (circle '(0.3 0.275) 0.275)
-                                                  (circle '(0.3 0.275) 0.175)))
-                               (rectangle '(0.3 0) '(1 1)))
+    (union (intersection (union (ring '(0.3 0.725) 0.225 0.1)
+                                (ring '(0.3 0.275) 0.225 0.1))
+                         (rectangle '(0.3 0) '(1 1)))
                  ;; Bars connecting to the semicircles
                  (rectangle '(0.1 0) '(0.3 0.1))
                  (rectangle '(0.1 0.45) '(0.3 0.55))
@@ -47,42 +45,38 @@
                  (rectangle '(0 0) '(0.1 1))))
 
 (make-glyph! "C" 0.57
-    (union (difference (union (difference (circle '(0.3 0.7) 0.3)
-                                         (circle '(0.3 0.7) 0.2))
-                             (difference (circle '(0.3 0.3) 0.3)
-                                         (circle '(0.3 0.3) 0.2)))
-                      (rectangle '(0 0.3) '(0.6 0.7))
-                      (triangle '(0.3 0.5) '(1 1.5) '(1 -0.5)))
-                    (rectangle '(0 0.3) '(0.1 0.7))))
+    (union (difference (union (ring '(0.3 0.7) 0.25 0.1)
+                              (ring '(0.3 0.3) 0.25 0.1))
+                       (rectangle '(0 0.3) '(0.6 0.7))
+                       (triangle '(0.3 0.5) '(1 1.5) '(1 -0.5)))
+           (rectangle '(0 0.3) '(0.1 0.7))))
 
 (make-glyph! "D" 0.6
     (union (rectangle '(0 0) '(0.1 1))
-                 (intersection (rectangle '(0 0) '(1 1))
-                    (difference (circle '(0.1 0.5) 0.5) (circle '(0.1 0.5) 0.4)))))
+           (intersection (rectangle '(0 0) '(1 1))
+                         (ring '(0.1 0.5) 0.45 0.1))))
 
 (make-glyph! "E" 0.6
   (union (rectangle '(0 0) '(0.1 1))
-               (rectangle '(0 0) '(0.6 0.1))
-               (rectangle '(0 0.9) '(0.6 1))
-               (rectangle '(0 0.45) '(0.6 0.55))))
+         (rectangle '(0 0) '(0.6 0.1))
+         (rectangle '(0 0.9) '(0.6 1))
+         (rectangle '(0 0.45) '(0.6 0.55))))
 
 (make-glyph! "F" 0.6
   (union (rectangle '(0 0) '(0.1 1))
-               (rectangle '(0 0.9) '(0.6 1))
-               (rectangle '(0 0.45) '(0.6 0.55))))
+         (rectangle '(0 0.9) '(0.6 1))
+         (rectangle '(0 0.45) '(0.6 0.55))))
 
 (make-glyph! "G" 0.6
   (union (rectangle '(0 0.3) '(0.1 0.7))
-                 (rectangle '(0.5 0.3) '(0.6 0.4))
-                 (rectangle '(0.3 0.4) '(0.6 0.5))
-          (difference (union (difference (circle '(0.3 0.7) 0.3)
-                                         (circle '(0.3 0.7) 0.2))
-                             (difference (circle '(0.3 0.3) 0.3)
-                                         (circle '(0.3 0.3) 0.2)))
-                        (rectangle '(0 0.3) '(0.6 0.7)))))
+         (rectangle '(0.5 0.3) '(0.6 0.4))
+         (rectangle '(0.3 0.4) '(0.6 0.5))
+         (difference (union (ring '(0.3 0.7) 0.25 0.1)
+                            (ring '(0.3 0.3) 0.25 0.1))
+                     (rectangle '(0 0.3) '(0.6 0.7)))))
 
 (make-glyph! "H" 0.6
   (union (rectangle '(0 0) '(0.1 1))
-                 (rectangle '(0.5 0) '(0.6 1))
-                 (rectangle '(0 0.45) '(0.6 0.55))))
+         (rectangle '(0.5 0) '(0.6 1))
+         (rectangle '(0 0.45) '(0.6 0.55))))
 
