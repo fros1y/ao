@@ -32,6 +32,12 @@
                       (list (- r) (- r)) (list r r))
           center))
 
+(define-public (ring center r w)
+    "ring '(x y) r w
+    Constructs a ring from a center, radius, and width"
+    (difference (circle center (+ r (/ w 2)))
+                (circle center (- r (/ w 2)))))
+
 (define-public (rectangle a b)
     "rectangle '(xmin ymin) '(xmax ymax)
     Constructs a rectangle from two lists representing its corners"
