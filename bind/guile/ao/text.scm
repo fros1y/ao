@@ -80,3 +80,22 @@
          (rectangle '(0.5 0) '(0.6 1))
          (rectangle '(0 0.45) '(0.6 0.55))))
 
+(make-glyph! "I" 0.5
+  (union (rectangle '(0.2 0) '(0.3 1))
+         (rectangle '(0 0) '(0.5 0.1))
+         (rectangle '(0 0.9) '(0.5 1))))
+
+(make-glyph! "J" 0.55
+  (union (rectangle '(0.45 0.275) '(0.55 1))
+         (intersection (ring '(0.275 0.275) 0.225 0.1)
+                       (rectangle '(0 0) '(0.55 0.275)))))
+
+(make-glyph! "K" 0.6
+  (difference (rectangle '(0 0) '(0.6 1))
+              (triangle '(0.1 1) '(0.5 1) '(0.1 0.6))
+              (triangle '(0.5 0) '(0.1 0) '(0.1 0.4))
+              (triangle '(0.6 0.95) '(0.6 0.05) '(0.18 0.5))))
+
+(make-glyph! "L" 0.6
+  (union (rectangle '(0 0) '(0.1 1))
+         (rectangle '(0 0) '(0.6 0.1))))
