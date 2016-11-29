@@ -99,3 +99,49 @@
 (make-glyph! "L" 0.6
   (union (rectangle '(0 0) '(0.1 1))
          (rectangle '(0 0) '(0.6 0.1))))
+
+(make-glyph! "M" 0.8
+  (union (rectangle '(0 0) '(0.1 1))
+         (rectangle '(0.7 0) '(0.8 1))
+         (triangle '(0 1) '(0.1 1) '(0.45 0))
+         (triangle '(0.45 0) '(0.35 0) '(0 1))
+         (triangle '(0.7 1) '(0.8 1) '(0.35 0))
+         (triangle '(0.35 0) '(0.8 1) '(0.45 0))))
+
+(make-glyph! "N" 0.6
+  (union (rectangle '(0 0) '(0.1 1))
+         (rectangle '(0.5 0) '(0.6 1))
+         (triangle '(0 1) '(0.1 1) '(0.6 0))
+         (triangle '(0.6 0) '(0.5 0) '(0 1))))
+
+(make-glyph! "O" 0.6
+  (union (rectangle '(0 0.3) '(0.1 0.7))
+         (rectangle '(0.5 0.3) '(0.6 0.7))
+         (difference (union (ring '(0.3 0.7) 0.25 0.1)
+                            (ring '(0.3 0.3) 0.25 0.1))
+                     (rectangle '(0 0.3) '(0.6 0.7)))))
+
+(make-glyph! "P" 0.575
+  (union (difference (ring '(0.3 0.725) 0.225 0.1)
+                     (rectangle '(0 0) '(0.3 1)))
+         (rectangle '(0 0) '(0.1 1))
+         (rectangle '(0.1 0.45) '(0.3 0.55))
+         (rectangle '(0.1 0.9) '(0.3 1))))
+
+(make-glyph! "Q" 0.6
+  (union (rectangle '(0 0.3) '(0.1 0.7))
+         (rectangle '(0.5 0.3) '(0.6 0.7))
+         (difference (union (ring '(0.3 0.7) 0.25 0.1)
+                            (ring '(0.3 0.3) 0.25 0.1))
+                     (rectangle '(0 0.3) '(0.6 0.7)))
+         (triangle '(0.5 0.1) '(0.6 0.1) '(0.6 0))
+         (triangle '(0.5 0.1) '(0.5 0.3) '(0.6 0.1))))
+
+(make-glyph! "R" 0.575
+  (union (difference (ring '(0.3 0.725) 0.225 0.1)
+                     (rectangle '(0 0) '(0.3 1)))
+         (rectangle '(0 0) '(0.1 1))
+         (rectangle '(0.1 0.45) '(0.3 0.55))
+         (rectangle '(0.1 0.9) '(0.3 1))
+         (triangle '(0.3 0.5) '(0.4 0.5) '(0.575 0))
+         (triangle '(0.475 0) '(0.3 0.5) '(0.575 0))))
