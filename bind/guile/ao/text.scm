@@ -145,3 +145,23 @@
          (rectangle '(0.1 0.9) '(0.3 1))
          (triangle '(0.3 0.5) '(0.4 0.5) '(0.575 0))
          (triangle '(0.475 0) '(0.3 0.5) '(0.575 0))))
+
+(make-glyph! "S" 0.55
+  (let ((half (difference (ring '(0.275 0.725) 0.225 0.1)
+                          (rectangle '(0.275 0.45) '(0.55 0.725)))))
+    (union half (reflect-x (reflect-y half 0.5) 0.275))))
+
+(make-glyph! "T" 0.6
+  (union (rectangle '(0 0.9) '(0.6 1))
+         (rectangle '(0.25 0) '(0.35 1))))
+
+(make-glyph! "U" 0.6
+  (union (rectangle '(0 0.3) '(0.1 1))
+         (rectangle '(0.5 0.3) '(0.6 1))
+         (difference (ring '(0.3 0.3) 0.25 0.1)
+                     (rectangle '(0 0.3) '(0.6 0.7)))))
+
+(make-glyph! "V" 0.6
+  (let ((half (union (triangle '(0 1) '(0.1 1) '(0.35 0))
+                     (triangle '(0.35 0) '(0.25 0) '(0 1)))))
+    (union half (reflect-x half 0.3))))
