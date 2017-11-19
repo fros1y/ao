@@ -160,6 +160,20 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     y z))
 (export shear-x-y)
 
+(define* (cylinder-wrap shape radius axis)
+  "cylinder-wrap shape radius #[x0 _ z0]
+Wraps a shape onto the surface of a y-axis cylinder of given
+radius, with a y-axis running through the given axis point
+"
+  (let ((shapep (move shape (- axis))))
+    (remap-shape (shapep x y z)
+                 (* (atan (/ x radius) (/ z radius)) radius)
+                 y
+                 (* (- (sqrt (+ (expt (/ x radius) 2)
+                                (expt (/ z radius) 2)))
+                       1)
+                    radius))))
+(export cylinder-wrap)
 
 (define* (repel shape locus r)
 "repel shape #[x0 y0 z0] radius
