@@ -72,3 +72,32 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     (max (- z zmax) (- zmin z)
       (/ (+ (* (- z zmin) b) (* (- zmax z) a))
          (- zmax zmin)))))
+
+(define-public (union-chamfer a b r)
+ "union-chamfer a b radius
+Unions two shapes together with a 45 degree chamfer (bevel)
+with the given radius.
+"
+  (min
+   (min a b)
+   (* (+ a (- b r))
+      (sqrt 0.5))))
+
+
+(define-public (intersection-chamfer a b r)
+  "intersection-chamfer a b radius
+Intersection of two shapes together with a 45 degree chamfer (bevel)
+with the given radius.
+"
+  (max
+   (max a b)
+   (* (+ a (+ b r))
+      (sqrt 0.5))))
+
+(define-public (difference-chamfer a b r)
+  "difference-chamfer a b radius
+Calculates the difference between two shapes with a 45 degree chamfer
+(bevel) with the given radius
+"
+  (intersection-chamfer a (- b) r)
+)
